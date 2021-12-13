@@ -16,14 +16,18 @@ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH
 
 ![image](https://user-images.githubusercontent.com/16200468/145804026-8b11f957-63ba-45b3-a54a-82b68cb25539.png)
 ```
+编译：
 bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH="C://python27//python.exe" mediapipe/examples/desktop/face_detection:face_detection_cpu
+运行
 C:\Users\yanghuatao\_bazel_yanghuatao\w6ers2ho\execroot\mediapipe\bazel-out\x64_windows-opt\bin\mediapipe\examples\desktop\face_detection\face_detection_cpu.exe --calculator_graph_config_file=mediapipe/graphs/face_detection/face_detection_desktop_live.pbtxt
 ```
 
 #人脸眼睛鼻子等标注
 ![image](https://user-images.githubusercontent.com/16200468/145803957-c5498ee8-c2ce-4154-b5cf-ec1e559ac920.png)
 ```
+编译：
 bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH="C://python27//python.exe" mediapipe/examples/desktop/face_mesh:face_mesh_cpu
+运行：
 C:\Users\yanghuatao\_bazel_yanghuatao\w6ers2ho\execroot\mediapipe\bazel-out\x64_windows-opt\bin\mediapipe\examples\desktop\face_mesh\face_mesh_cpu.exe --calculator_graph_config_file=mediapipe/graphs/face_mesh/face_mesh_desktop_live.pbtxt
 ```
 ```
