@@ -1,5 +1,28 @@
 https://google.github.io/mediapipe/solutions/face_mesh.html
 
+```
+set BAZEL_VS="C://Program Files (x86)//Microsoft Visual Studio//2019//Community"
+set BAZEL_VC="C://Program Files (x86)//Microsoft Visual Studio//2019//Community//VC"
+set BAZEL_VC_FULL_VERSION=14.29.30133
+set BAZEL_WINSDK_FULL_VERSION=10.0.22000.0
+
+pip install numpy
+cd D:\workspace\mediapipe
+bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH="C://Python27//python.exe" mediapipe/examples/desktop/hello_world #--cpu=x64_x86_windows
+
+pip install future
+bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH="C://python27//python.exe" mediapipe/graphs/face_detection:desktop_live_calculators
+
+
+bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH="C://python27//python.exe" mediapipe/examples/desktop/face_detection:face_detection_cpu
+C:\Users\yanghuatao\_bazel_yanghuatao\w6ers2ho\execroot\mediapipe\bazel-out\x64_windows-opt\bin\mediapipe\examples\desktop\face_detection\face_detection_cpu.exe --calculator_graph_config_file=mediapipe/graphs/face_detection/face_detection_desktop_live.pbtxt
+
+
+bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH="C://python27//python.exe" mediapipe/examples/desktop/face_mesh:face_mesh_cpu
+C:\Users\yanghuatao\_bazel_yanghuatao\w6ers2ho\execroot\mediapipe\bazel-out\x64_windows-opt\bin\mediapipe\examples\desktop\face_mesh\face_mesh_cpu.exe --calculator_graph_config_file=mediapipe/graphs/face_mesh/face_mesh_desktop_live.pbtxt
+
+注意python和set BAZEL_VS路径斜杠方向，BAZEL_WINSDK_FULL_VERSION是一个文件夹的名字，可能和安装显示的不一致
+```
 
 ---
 layout: default
